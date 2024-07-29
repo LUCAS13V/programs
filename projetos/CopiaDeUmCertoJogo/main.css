@@ -6,10 +6,9 @@ body {
     overflow-x: hidden;  
 }
 #tela {
-   
     border: black solid 5px;
-    background-color: RED;
-    margin-left: 100px;
+    margin: auto;
+    
 }
 #pl2 {
     /*borda*/

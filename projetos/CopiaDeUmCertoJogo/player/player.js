@@ -1,11 +1,22 @@
 var object_player = document.querySelector("#player")
+//obj player 
 const player = {
-    obj: object_player.getBoundingClientRect(),
-    x: object_player.clientLeft+tela.obj.x,
+    obj: "",
+    x: "",
+    y: "",
+    largura: "",
+    altura: "",
+    criar(x=tela.obj.x+object_tela.clientLeft , y=tela.obj.y+object_tela.clientLeft, larg=5, altu=5){
+        //atalizando valores do inicias
+        console.log(object_tela.clientLeft)
+        this.x = x, object_player.style.left=`${this.x}px`
+        this.y = y, object_player.style.top=`${this.y}px`
+        this.largura = larg, object_player.style.width=`${this.largura}%`
+        this.altura = altu, object_player.style.height=`${this.altura}%`
+       
+    },
     move(){
-        this.obj = object_player.getBoundingClientRect()
         let speed = 7
-        console.log(this.x+this.obj.width, tela.obj.width+tela.x)
         //DIREITA
         if(key_player_move==68){
             if(debug){console.log("click_left = true")}
@@ -29,6 +40,7 @@ const player = {
         if(key_player_move==65){
             if(debug){console.log("click_right = true")}
             if(this.x <= (object_tela.clientLeft) + tela.obj.x){
+                console.log(object_tela.clientLeft, tela.obj.x)
                 key_player_move=0
                 this.x=object_tela.clientLeft+tela.obj.x
                 object_player.style.left=`${this.x}px`
@@ -37,5 +49,10 @@ const player = {
                 object_player.style.left=`${this.x}px`
             }
         }
+
     }
 }
+function loop_player(){
+    player.obj=this.obj = object_player.getBoundingClientRect()
+    requestAnimationFrame(loop_player)
+}loop_player()
