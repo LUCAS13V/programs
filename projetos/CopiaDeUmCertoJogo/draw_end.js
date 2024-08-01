@@ -7,4 +7,4 @@ function loop(){
     player.move()
     requestAnimationFrame(loop)
 }loop()
-player.criar()
+player.criar(100, 80)

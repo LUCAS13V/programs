@@ -10,7 +10,7 @@ const player = {
         //atalizando valores do inicias
         console.log(object_tela.clientLeft)
         this.x = x, object_player.style.left=`${this.x}px`
-        this.y = y, object_player.style.top=`${this.y}px`
+        this.y = y, object_player.style.top=`${this.y}%`
         this.largura = larg, object_player.style.width=`${this.largura}%`
         this.altura = altu, object_player.style.height=`${this.altura}%`
        
